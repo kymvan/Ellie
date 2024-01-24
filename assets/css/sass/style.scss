@@ -1,0 +1,31 @@
+/* # Genesis Framework
+Theme Name: Beacon
+Theme URI: https://www.beaconmm.com/
+Description: Beacon Media Starter Theme
+Author: Beacon Media
+Author URI: https://www.beaconmm.com/
+Version: 1.0
+Genesis Version: 3.3.3
+Template: genesis
+Tags: one-column, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready
+License: GPL-2.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import "partials/abstracts/variables";
+@import "partials/abstracts/mixins";
+@import "partials/base/resets";
+@import "partials/base/defaults";
+@import "partials/base/animations";
+@import "partials/components/objects";
+@import "partials/components/forms";
+@import "partials/components/gutenberg";
+@import "partials/components/custom-blocks";
+@import "partials/layout/header";
+@import "partials/layout/site-nav";
+@import "partials/layout/structure";
+@import "partials/layout/sidebar";
+@import "partials/layout/footer";
+@import "partials/pages/archive";
+@import "partials/pages/location";
+@import "partials/pages/location-map";

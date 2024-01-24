@@ -1,0 +1,75 @@
+/* Editor Styles
+--------------------------------------------- */
+.editor-block-list__layout {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px; }
+  
+  .wp-block {
+  max-width: 100%; }
+
+.editor-post-title__block .editor-post-title__input {
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Source Sans Pro", sans-serif; }
+
+
+/* Panels
+--------------------------------------------- */
+.wp-block-group,
+.wp-cover,
+.page-intro-block {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100% !important;
+  padding: 0 24px;
+  border: 1px solid $border-color;
+   background-size: cover;
+}
+
+.wp-block-group .wp-block-group__inner-container {
+  max-width: 100%;
+  padding: 48px 0; }
+  
+  ul.wp-block-list,
+  ol.wp-block-list {
+  	margin: 0 0 $margin-basis $margin-basis;
+  	
+  	ul, ol {
+  		margin: 0 0 $margin-basis $margin-basis*2;
+  	}
+  }
+  
+  ul.wp-block-list li {
+  	list-style: disc;
+  }
+  
+  ol.wp-block-list li {
+  	list-style: decimal;
+  }
+  
+
+/* Columns
+--------------------------------------------- */
+.wp-block-column {
+  border: 1px solid $border-color; }
+  
+ /* Buttons
+--------------------------------------------- */
+ .wp-block-button__link {
+ 	@include button();
+ }
+ 
+ /* Lists */
+  #tinymce ul,
+   #tinymce ol {
+  	margin-left: 24px;
+  }
+  
+ #tinymce ul li {
+ 	list-style: disc;
+ }
+ 
+  #tinymce ol li {
+ 	list-style: n;
+ }

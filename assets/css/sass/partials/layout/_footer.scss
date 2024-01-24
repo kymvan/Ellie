@@ -1,0 +1,274 @@
+/* Footer
+--------------------------------------------- */
+
+/* Footer Widgets */
+.footer {
+	background: url('assets/images/bg-footer.png') no-repeat center top $footer-widgets-bg; 
+	color: $footer-widgets-font-color;
+	font-size: $footer-widgets-font-size;
+	line-height: $footer-widgets-line-height;
+	
+	
+	.wrap{ 
+		padding-top: $margin-basis*4;
+		padding-bottom: $margin-basis;
+		overflow: hidden;
+	}
+}
+
+.footer-widgets { 
+	
+	
+	
+	.footer-widget-area {
+		display: flex;
+		width: 940px;
+		max-width: 100%;
+		gap: $margin-basis*2;
+		
+		.widget {
+			width: calc(20% - 32px);
+		}
+		
+		.widget:first-child {
+			width: calc(35% - 32px);
+			
+			.menu {
+				text-align: center;
+			}
+		}
+		
+		.widget:nth-child(2) {
+			width: calc(45% - 32px);
+			
+		.menu {
+				columns: 2;
+				-webkit-columns: 2;
+				-moz-columns: 2;
+				column-gap: $margin-basis*4;
+			}
+					}
+					
+					
+		
+		.menu {
+			margin: 0;
+			font-weight: $strong-font-weight;
+			
+			li {
+				display: block;
+				float: none;
+				margin-bottom: $margin-basis*0.75;
+				
+				a {
+					padding: 0;
+				}
+				
+				&.current-menu-item a, &.current-menu-ancestor a {
+			color: $footer-widgets-a-hover-color;
+					
+				}
+			}
+		}
+		
+		a {
+			text-decoration: none;
+			color: $footer-widgets-a-color;
+		}
+		
+		a:hover,
+		a:focus {
+			color: $footer-widgets-a-hover-color;
+		}
+		.widget_custom_html {
+			img {
+				margin: 0 auto;
+				display: block;
+			}
+		}
+
+	}
+
+}
+
+/* Site Footer */
+
+.site-footer {
+	color: $site-footer-font-color;
+	font-size: $site-footer-font-size;
+	line-height: $site-footer-line-height;
+	text-align: center;
+	margin-top: $margin-basis*2;
+	
+	.footer-content {
+		flex: 1;
+		margin-top: 9px;
+	}
+		
+	a { 
+		color: $site-footer-a-color;
+		text-decoration: none;	
+		border: 1px solid transparent;	
+	}
+	
+	a:hover{
+		color: $site-footer-a-hover-color;
+	}
+	
+	
+	a:focus {
+		border-color: rgba(255,255,255,0.4);
+	}
+	
+	p{
+		margin: 0;
+	}
+	
+	.gototop {
+		position: fixed;
+	    z-index: 99;
+	    right: $margin-basis*0.25;
+	    bottom: 0;
+	    opacity: 0;
+	    -webkit-transition: all 0.8s;
+	    -moz-transition: all 0.8s;
+	    -ms-transition: all 0.8s;
+	    -o-transition: all 0.8s;
+	    transition: all 0.8s;
+		
+		span {
+			display: block;
+			position: absolute;
+			text-indent: -9999px;
+			height: 0;
+			width: 0;
+		}
+		
+		a {
+			display: block;
+			background: $accent1;
+			width: 52px;
+			height: 50px;
+			text-align: center;
+			border-radius: 6px 6px 0 0;
+		}
+		
+		a:hover,
+		a:focus {
+			background: $accent2;
+		}
+		
+		a:before {
+	      content: " ";
+	      display: block;
+	      height: 24px;
+	      width: 20px;
+	      -webkit-mask-image: url(assets/icons/chevron-up.svg);
+	      mask-image: url(assets/icons/chevron-up.svg);
+	      background-color: $white;
+	      background-repeat: no-repeat;
+	      background-position: center;
+	      position: absolute;
+	      top: 50%;
+	      left: 50%;
+	      transform: translate(-50%, -50%); 
+		}
+	}
+}
+
+.scroll .gototop {
+  opacity: 1; 
+}
+
+.after-footer {
+	background: $footer-widgets-bg;
+	color: $white;
+	font-size: $site-footer-font-size;
+	text-align: center;
+	margin-top: $margin-basis;
+	
+	a { 
+		color: $site-footer-a-color;
+		text-decoration: none;	
+		border: 1px solid transparent;	
+	}
+	
+	a:hover{
+		color: $site-footer-a-hover-color;
+	}
+	
+	
+	a:focus {
+		border-color: rgba(255,255,255,0.4);
+	}
+	
+	.widget {
+			padding: $margin-basis 0 $margin-basis*0.5;
+		border-top: 1px solid rgba(255,255,255,0.4);
+		}
+	
+	
+}
+
+/** Media Queries **/
+
+@media only screen and (max-width: $tablet),
+print
+{
+
+	.footer{
+		background-image: none;
+		
+		.wrap {
+			padding-top: $margin-basis*2;
+			padding-bottom: $margin-basis;
+		}
+		.footer-widget-area{
+			flex-wrap: wrap;
+			justify-content: center;
+			
+			.widget:first-child {
+				width: 100%;
+				text-align: center;
+				
+			}
+			
+			.widget:nth-child(2) {
+				width: auto;
+			}
+		}
+		
+		
+	}
+	
+}
+	
+@media only screen and (max-width: $mobile)
+{
+
+	.footer-widgets{
+		
+		.footer-widget-area {
+			display: block;
+			
+			.widget {
+				width: 100% !important;
+				margin: 0 auto $margin-basis;
+				text-align: center;
+			}
+			
+			.widget:nth-child(2) {
+				width: 100%;
+				
+				.menu {
+					column-gap: $margin-basis;
+				}
+			} 
+			
+			
+		}
+		
+		
+	}
+	
+}

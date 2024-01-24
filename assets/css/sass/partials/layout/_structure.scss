@@ -1,0 +1,110 @@
+/* Structure and Layout
+--------------------------------------------- */
+
+.site-container {
+	margin: 0 auto;
+	background: $site-container-bg;
+	overflow: hidden;
+}
+
+.wrap,
+.site-inner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $standard-screen-width;
+	padding-left: $margin-basis*2;
+	padding-right: $margin-basis*2;
+}
+
+.site-inner {
+	clear: both;
+	margin: $header-height auto $margin-basis*2;
+}
+
+.page .site-inner,
+.single-locations .site-inner {
+	margin-bottom: 0;
+}
+
+.narrow {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $narrow-screen-width;
+}
+
+.very-narrow {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $very-narrow-screen-width;
+}
+
+
+.sidebar-content .content-area,
+.content-sidebar  .content-area {
+	display: flex;
+	gap: $margin-basis*3;
+	flex-basis: 100%;
+}
+
+
+.sidebar-content .site-main,
+.content-sidebar  .site-main {
+	flex-basis: 0;
+	flex-grow: 1;
+}
+
+.sidebar-content .sidebar,
+.content-sidebar .sidebar  {
+	flex-basis: 25%;
+	flex-grow: 0;
+}
+
+/** Media Queries **/
+
+@media only screen and (max-width: $laptop) {
+	
+	.wrap,
+	.site-inner {
+		max-width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: $tablet),
+print
+ {
+	.wrap,
+	.site-inner {
+		max-width: 100%;
+		margin: 0;
+		padding-left: $margin-basis;
+		padding-right: $margin-basis;
+	}
+	
+	.sidebar-content .content-area,
+	.content-sidebar  .content-area {
+		display: block;
+	}
+	
+	.sidebar-content .site-main,
+	.content-sidebar  .site-main {
+		width: 100%;
+	}
+	
+	.sidebar-content .sidebar,
+	.content-sidebar .sidebar  {
+		width: 100%;
+		padding: 0;
+	}
+	
+	.sidebar-content .sidebar,
+	.content-sidebar .sidebar {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: $mobile) {
+	
+	
+
+}

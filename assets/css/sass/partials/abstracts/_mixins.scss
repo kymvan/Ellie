@@ -1,0 +1,53 @@
+//Button Mixin
+
+@mixin button() {
+	border: 2px solid $white;
+	border-radius: 6px;
+	padding: $margin-basis*0.45 $margin-basis*2 $margin-basis*0.55;
+	text-decoration: none;
+	cursor: pointer;
+	width: auto;
+	font-size: $button-font-size;
+	font-weight: $button-font-weight;
+	line-height: $button-line-height;
+	background: $button-color;
+	color: $button-font-color;
+	text-align: center;
+	-webkit-transition: all 0.4s;  
+		-moz-transition: all 0.4s; 
+		-ms-transition: all 0.4s;
+		-o-transition: all 0.4s;
+		transition: all 0.4s;
+		position: relative;
+	
+	&::after {
+		-webkit-transition: all 0.4s;  
+		-moz-transition: all 0.4s; 
+		-ms-transition: all 0.4s;
+		-o-transition: all 0.4s;
+		transition: all 0.4s;
+		content: " "; 
+		display: inline-block;
+		height: 14px;
+		width: 0;
+		-webkit-mask-image: url(assets/icons/chevron-right.svg);
+		mask-image: url(assets/icons/chevron-right.svg);
+		background-color: $button-font-color;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
+		position: relative;
+		opacity: 0;
+		top: 2px;
+	}
+}
+
+@mixin button-hover() {
+	
+	&::after {
+		opacity: 1;
+		width: 14px;
+		margin-left: 2px;
+	}
+}

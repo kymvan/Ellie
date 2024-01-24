@@ -1,0 +1,310 @@
+/* Location Map
+--------------------------------------------- */
+.post-type-archive-locations .site-inner {
+	margin-bottom: 0;
+}
+
+.ui-autocomplete {
+  max-width: 100%;
+  width: 358px;
+  z-index: 99;
+  border-radius: 6px;
+  padding-top: $margin-basis*0.5;
+  height: 419px;
+  overflow: scroll;
+  
+   .ui-menu-item {
+	  padding: $margin-basis*0.5 $margin-basis;
+	  border: 1px solid $border-color;
+	  border-top: none;
+	  background: $white;
+	  cursor: pointer;
+	  
+	  &:first-child {
+	  	border-radius: 6px 6px 0 0;
+	  	border-top: 1px solid $border-color;
+	  }
+	  
+	  &:last-child {
+	  	border-radius: 0 0 6px 6px;
+	  }
+   	
+	  &:hover, a:hover {
+	  	color: $accent2;
+	  }
+	  
+	  a {
+	  	color: $accent1;
+	  }
+	}
+
+}
+
+.find-location {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0 calc(50% - 50vw);
+	max-width: 100vw;
+width: 100vw;
+	height: 800px;
+	clear: both;
+	
+	.search {
+		height: 100%;
+		overflow: scroll;
+		flex-basis: 42.5%;
+		position: relative;
+		
+		.inner {
+			padding: $margin-basis*2;
+			float: right;
+			width: 514px;
+			max-width: 100%;
+		}
+		
+		.search-box {
+			background: $accent1;
+			color: $white;
+			overflow: hidden;
+			z-index: 9;
+			position: relative;
+			
+			.search-form {
+				display: flex;
+				
+				#searchLocations {
+					border-radius: 6px 0 0 6px;
+				}
+				
+				button {
+					border: none;
+					text-transform: uppercase;
+					background: $accent2;
+					border-radius: 0 6px 6px 0;
+					padding-left: $margin-basis*0.75;
+					padding-right: $margin-basis*0.75;
+					
+					&:hover, &:focus {
+						background: $accent3;
+						color: $white;
+					}
+				}
+			}
+		}
+		
+		h1, h2 {
+			font-size: $h2-font-size;
+			
+			strong {
+				color: $accent2;
+			}
+		}
+		
+		h2 {
+			margin: 0;
+		}
+		
+		.locations {
+			
+			.location {
+				border-bottom: 1px solid #ddd;
+				overflow: hidden;
+				font-size: $body-sm-font-size;
+				
+				.inner {
+					padding: $margin-basis*0.75 $margin-basis*1.5 $margin-basis*0.75 $margin-basis*2;
+					display: flex;
+					gap: $margin-basis;
+					
+					&.message {
+						display: block;
+						
+						.searchQuery {
+							text-transform: capitalize;
+						}
+					}
+					
+					.location-image {
+						flex: 0 0 auto;
+					}
+					
+					.location-details {
+						position: relative;
+					}
+					
+					img {
+						width: 190px;
+						display: block;
+						margin: 0;
+						border-radius: 12px;
+					}
+					
+					.marker {
+						margin-bottom: $margin-basis*0.5;
+						font-size: 14px;
+						color: #7C7C7C;
+						margin-bottom: $margin-basis*0.25;
+									
+						.svg-icon {
+							fill: $accent1;
+							margin-right: $margin-basis*0.125;
+							position: relative;
+							top: 2px;
+						}
+						
+						&.telehealth {
+										text-transform: uppercase;
+										
+										.svg-icon {
+											fill: $accent5;
+										}
+									} 
+					}
+					
+					h2 {
+						font-size: $h3-font-size;
+						font-weight: $strong-font-weight;
+						margin-bottom: $margin-basis*0.25;
+						
+						a {
+							color: $accent1;
+							
+							&:hover {
+								color: $accent5;
+							}
+						}
+					}
+					
+					p {
+						margin-bottom: $margin-basis*0.25;
+					}
+				}
+			}
+		}
+	}
+	
+	.map {
+		position: relative;
+		flex-basis: 57.5%;
+		
+		#map_canvas {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.info-window{
+	display: flex;
+	font-size: $body-sm-font-size;
+	max-width: 340px;
+	
+	.location-image {
+		display: block;
+		margin: 0 $margin-basis*0.5 0 0;
+		
+		img {
+			width: 100px;
+			height: auto;
+		}
+	}
+	
+	.marker {
+		display: none;
+	}
+	
+	
+	h2 {
+		font-size: $body-font-size;
+		font-weight: bold;
+		margin: 0;
+		color: $accent1;
+		
+		a {
+			color: $accent1;
+		}
+		
+	}
+	
+	p {
+		margin-bottom: $margin-basis*0.25;
+		font-family: $body-font;
+		
+		&.address {
+			margin-bottom: 0;
+		}
+	}
+	
+	strong {
+		color: $accent1;
+	}
+	
+	img {
+		border-radius: 6px;
+	}
+}
+
+//Map Block
+#locations {
+	height: 518px;
+	
+	 .search .locations .location .inner img {
+	 	width: $margin-basis*3.75;
+	 }
+}
+
+@media only screen and (max-width: $tablet) {
+	
+	.find-location{
+		display: block;
+		height: auto;
+		
+		.map {
+			#map_canvas {
+				width: 100%;
+				height: 400px;
+			}
+		}
+		
+		.search {
+			.inner {
+				float: none;
+				width: 100%;
+				padding: $margin-basis;
+			}
+			
+			.locations {
+			overflow: scroll;
+			max-height: 100%;
+			height: auto;
+			padding-top: $margin-basis*0.25;
+			padding-bottom: $margin-basis*0.75;
+			
+			.location .inner {
+				padding: $margin-basis*0.75 $margin-basis;
+			}
+		}
+	}
+		}
+		
+		
+	#locations{height: 878px; overflow: hidden; }
+	
+}
+
+@media only screen and (max-width: $mobile) {
+	.find-location .search .locations .location .inner img{
+		width: 130px;
+	}
+	
+	.info-window{
+	display: block;
+	img {
+		display: none;
+	}
+}
+
+.ui-autocomplete {
+  width: 266px;
+  }
+}
